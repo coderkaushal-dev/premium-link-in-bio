@@ -1,0 +1,83 @@
+/* =========================================
+   PROJECT: Premium Link-in-Bio UI
+   AUTHOR: Coder Kaushal
+========================================= */
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+body {
+    display: flex; justify-content: center; align-items: center;
+    min-height: 100vh; background-color: #0b0d10; color: #fff;
+    overflow-x: hidden; position: relative;
+    padding: 20px 0; /* Mobile me thoda space */
+}
+
+/* Background Blobs */
+.bg-shape { position: absolute; border-radius: 50%; filter: blur(100px); z-index: 0; opacity: 0.6; }
+.shape-1 { width: 350px; height: 350px; background: #e1306c; top: -100px; left: -100px; animation: float 6s infinite alternate; }
+.shape-2 { width: 400px; height: 400px; background: #0088cc; bottom: -150px; right: -100px; animation: float 8s infinite alternate-reverse; }
+
+@keyframes float { 0% { transform: translateY(0px) scale(1); } 100% { transform: translateY(30px) scale(1.1); } }
+
+/* Mobile Frame */
+.mobile-frame {
+    width: 100%; max-width: 400px; background: rgba(20, 24, 30, 0.6);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 30px;
+    padding: 40px 25px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    position: relative; z-index: 1; text-align: center;
+}
+
+/* Share Button & Toast */
+.share-btn {
+    position: absolute; top: 25px; right: 25px; background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; width: 40px; height: 40px;
+    cursor: pointer; color: white; transition: 0.3s; display: flex; justify-content: center; align-items: center;
+}
+.share-btn:hover { background: rgba(255,255,255,0.2); transform: scale(1.1); }
+
+.toast-msg {
+    position: absolute; top: 75px; right: 20px; background: #2ed573; color: #000;
+    padding: 8px 15px; border-radius: 10px; font-weight: bold; font-size: 12px;
+    opacity: 0; transform: translateY(-10px); transition: 0.3s; pointer-events: none; z-index: 10;
+}
+.toast-msg.show { opacity: 1; transform: translateY(0); }
+
+/* Profile Header */
+.img-container {
+    width: 110px; height: 110px; margin: 0 auto 15px; border-radius: 50%;
+    padding: 4px; background: linear-gradient(135deg, #00d2ff, #e1306c);
+}
+.profile-img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid #14181e; background: #1a1d24; }
+.profile-name { font-size: 24px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.verified { font-size: 14px; color: #00d2ff; }
+.profile-bio { font-size: 14px; color: #a0a0a0; margin-top: 5px; margin-bottom: 30px; }
+
+/* 3D Neon Buttons */
+.links-container { display: flex; flex-direction: column; gap: 15px; }
+
+.link-btn {
+    display: flex; align-items: center; padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 15px; text-decoration: none; color: #fff;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative; overflow: hidden; opacity: 0; transform: translateY(20px);
+}
+
+.link-btn .icon { font-size: 22px; margin-right: 15px; }
+.link-btn .text { font-size: 15px; font-weight: 600; letter-spacing: 0.5px; }
+
+/* Brand Colors Magic */
+.link-btn:hover { transform: translateY(-5px) scale(1.03); }
+
+.yt:hover { border-color: #ff0000; box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3); background: rgba(255, 0, 0, 0.1); }
+.insta:hover { border-color: #e1306c; box-shadow: 0 10px 20px rgba(225, 48, 108, 0.3); background: rgba(225, 48, 108, 0.1); }
+.fb:hover { border-color: #1877f2; box-shadow: 0 10px 20px rgba(24, 119, 242, 0.3); background: rgba(24, 119, 242, 0.1); } /* FB Neon */
+.github:hover { border-color: #ffffff; box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.1); }
+.tg:hover { border-color: #0088cc; box-shadow: 0 10px 20px rgba(0, 136, 204, 0.3); background: rgba(0, 136, 204, 0.1); }
+.website:hover { border-color: #00d2ff; box-shadow: 0 10px 20px rgba(0, 210, 255, 0.3); background: rgba(0, 210, 255, 0.1); }
+
+/* UI Credit */
+.ui-credit-inside { margin-top: 35px; color: #666; font-size: 12px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px; }
+.ui-credit-inside a { color: #fff; text-decoration: none; font-weight: bold; transition: 0.3s; }
+.ui-credit-inside a:hover { color: #00d2ff; text-shadow: 0 0 10px #00d2ff; }
